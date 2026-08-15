@@ -1,10 +1,11 @@
 """
 MODULE: tokocrypto_bot.exchange.tokocrypto_client
 DESCRIPTION: Direct Tokocrypto API v3 / open/v1 Client with HMAC-SHA256 Auth & Non-retry POST logic.
+FIX P0-CRITICAL: Corrected syntax error (import hashlib)
 """
 
 import hmac
-import hash_lib = hashlib
+import hashlib
 import time
 import requests
 import logging
@@ -29,7 +30,7 @@ class TokocryptoDirectClient:
         return hmac.new(
             self.api_secret.encode("utf-8"),
             query_string.encode("utf-8"),
-            hash_lib.sha256
+            hashlib.sha256
         ).hexdigest()
 
     def fetch_account_balances(self) -> Dict[str, Dict[str, float]]:
