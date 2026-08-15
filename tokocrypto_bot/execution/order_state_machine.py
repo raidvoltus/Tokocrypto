@@ -1,5 +1,4 @@
 """
-
 MODULE: tokocrypto_bot.execution.order_state_machine
 DESCRIPTION: Deterministic Order State Machine & Idempotency Key Generator for Tokocrypto.
 """
